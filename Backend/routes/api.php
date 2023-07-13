@@ -25,6 +25,8 @@ Route::group([
 
 Route::post('/login', 'Api\Auth\AuthController@login');
 Route::post('/register', 'Api\Auth\AuthController@register');
+Route::get('/all-user', 'Api\Frontend\PublicApiController@users');
+
 
 // api access with token
 Route::group([
