@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+// use App\Models\User;
 
 // Public Api all frontend without authentication
 Route::group([
@@ -23,6 +23,8 @@ Route::group([
 });
 
 
+
+
 Route::post('/login', 'Api\Auth\AuthController@login');
 Route::post('/register', 'Api\Auth\AuthController@register');
 
@@ -34,3 +36,10 @@ Route::group([
 ], function () {
    Route::get('details', 'Api\Backend\UserApiController@details');
 });
+
+
+// $user = User::make(request()->all(), [
+//   'name' => 'required|string',
+//   'email' => 'required|string|email', // Remove the unique rule
+//   'password' => 'required|string|min:6',
+// ]);
