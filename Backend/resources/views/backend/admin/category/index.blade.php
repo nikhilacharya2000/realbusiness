@@ -9,12 +9,12 @@
                 </div>
                 <div>All Category</div>
                 <div class="d-inline-block ml-2">
-                     
-                        <a href="{{URL::to('admin/category/create')}}" class="btn btn-success"><i
-                                class="glyphicon glyphicon-plus"></i>
-                            New Category
-</a>
-                    
+
+                    <a href="{{ URL::to('admin/category/create') }}" class="btn btn-success"><i
+                            class="glyphicon glyphicon-plus"></i>
+                        New Category
+                    </a>
+
                 </div>
             </div>
         </div>
@@ -24,32 +24,35 @@
             <div class="main-card mb-3 card">
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table id="manage_all"
-                               class="align-middle mb-0 table table-borderless table-striped table-hover">
+                        <table id="manage_all" class="align-middle mb-0 table table-borderless table-striped table-hover">
                             <thead>
-                            <tr>
-                                <th>Category Name</th>
-                                
-                            </tr>
+                                <tr>
+                                    <th>Category Name</th>
+
+                                </tr>
                             </thead>
                             <tbody>
-                       
-                        @foreach ( $category as $value )
 
-                            <tr>
+                                @foreach ($category as $value)
+                                    <tr>
 
-                            <th>{{$value->title}}</th>
-                            <th> <a href="{{Route('admin.category.edit',$value->id)}}">Edit</a></th>
-                                <th>
-                                    <form action="{{route('admin.category.destroy',$value->id)}}" method="POST">
-                                        @method('DELETE')
-                                        @csrf
-                                        <button type="submit">Delete</button>               
-                                    </form>
-                                </th>
-                                </tr>
-                        @endforeach 
-                               
+                                        <th>{{ $value->title }}</th>
+
+                                        <th>
+                                            <div class="d-flex">
+                                                <a class="btn btn-primary mr-2"
+                                                    href="{{ Route('admin.category.edit', $value->id) }}">Edit</a>
+                                                <form action="{{ route('admin.category.destroy', $value->id) }}"
+                                                    method="POST">
+                                                    @method('DELETE')
+                                                    @csrf
+                                                    <button class="btn btn-danger" type="submit">Delete</button>
+                                                </form>
+                                            </div>
+                                        </th>
+                                    </tr>
+                                @endforeach
+
                             </tbody>
                         </table>
                     </div>
@@ -66,6 +69,6 @@
             }
         }
     </style>
-    
- 
+
+
 @stop

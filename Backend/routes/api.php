@@ -27,6 +27,11 @@ Route::post('/login', 'Api\Auth\AuthController@login');
 Route::post('/register', 'Api\Auth\AuthController@register');
 Route::get('/all-user', 'Api\Frontend\PublicApiController@users');
 
+Route::get('/categories', 'Api\Frontend\PublicApiController@getCategory');
+
+
+
+
 
 // api access with token
 Route::group([
