@@ -40,6 +40,15 @@
                     </a>
                 </li>
 
+
+                <li>
+                    <a href="{{ URL :: to('/admin/celebrity') }}">
+                        <i class="metismenu-icon pe-7s-users"></i>
+                        Celebrity
+                    </a>
+                </li>
+
+
                 <li>
                     <a href="{{ URL :: to('/admin/category') }}">
                         <i class="metismenu-icon pe-7s-users"></i>

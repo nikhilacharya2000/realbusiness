@@ -35,6 +35,8 @@ Route::get('/allRoles', 'RoleController@getAll')->name('allRoles');
 // Settings Controller
 
 Route::resource('category', 'CategoryController');
+Route::resource('celebrity', 'CelebrityController');
+
 Route::resource('settings', 'SettingsController');
 Route::get('/allSettings', 'SettingsController@getAll')->name('allSettings');
 
