@@ -23,7 +23,7 @@ const CelebritiesPage = () => {
                           
                 </div>
                 
-                <div style={{backgroundColor:"#080833"}}>
+                <div style={{backgroundColor:"#000000"}}>
                 
                  
                 <CelebrrityLayout/>

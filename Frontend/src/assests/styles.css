@@ -232,7 +232,7 @@ a {
 /* filtration button */
 
 .nav-horizontal {
-	background-color: #262677;
+	background-color: #999999;
 	overflow: hidden;
 	height: 4em;
 	text-align: center;
@@ -242,12 +242,12 @@ margin: auto;
 	
 }
 .center {
-	
+	margin-top: 20px;
 	/* padding: 10px; */
   }
 .nav-horizontal .mask {
 	height: 5em;
-	width: 90%;
+	width: 95%;
 	overflow-x: auto;
 	-webkit-overflow-scrolling: touch;
 }
@@ -263,14 +263,21 @@ margin: auto;
 	display: block;
 	padding: 0 1em;
 	text-decoration: none;
-	color: #ffffff;
+	color: #000000;
+	
 	height: 3em;
 	line-height: 3;
 	font-size: 20px;
 }
+.filtar-btn{
+	background-color: #333333;
+	border-radius: 50px;
+	margin:2px;
+	width: 120px;
+}
 .nav-horizontal .list a:hover {
 	border-bottom: 2px solid rgb(240, 228, 228);
-	background-color: #7909f1;
+	background-color: #f1e509;
 }
 
   
@@ -280,7 +287,32 @@ margin: auto;
 /* filtration button */
 
 /* cards data */
+.card-img-top{
+	border-radius: 30px;
+	padding: 7px;
+}
+.card-title{
+	font-size: 30px;
+	text-align: left;
+	font-weight: 600; 
+	color: rgb(64, 64, 227);
+}
+.card{
+	border-radius: 30px;
+	box-shadow: rgba(218, 218, 234, 0.05) 0px 1px 0px, rgba(234, 234, 244, 0.1) 0px 0px 8px;
 
+}
+.card-body{
+	padding: 20px;
+	margin-top: -15px;
+}
+.btn-primary{
+       border-radius: 50px;
+	   width: 120px;
+}
+.btn-primary:hover{
+	background-color: black;
+}
 /* cards data */
 
 
@@ -372,13 +404,299 @@ margin: auto;
 /* detail end*/
 
 /* sidebar-start */
+.filterside{
+	background-color: #333333;
+	height: 900px;
+	margin-top: 20px;
+	margin-left: 30px;
+	padding: 15px;
+	border-radius: 20px;
+}
 .side-head{
-	font-size: 25px;
+	font-size: 35px;
+	margin-top: 30px;
 	color: white;
 }
-.filterside ul li{
+.type{
 	font-size: 15px;
+	text-align: left;
 	color: #fff;
 	list-style: none;
 }
+.sidebar-label{
+	font-size: 20px;
+	margin: 10px;
+	text-align:left;
+
+}
+.input-side-chek{
+   font-size: 20px;
+   margin: 12px;
+}
+@media screen and (max-width:) {
+	
+}
+.layout{
+	width: 100%;
+}
 /* sidebar-start */
+
+
+/* Login Form start */
+.body-login{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Jost', sans-serif;
+	background: linear-gradient(to bottom, #000000, #6e6978, #181822);
+}
+.main-login{
+	width: 1050px;
+	height: 600px;
+	background: red;
+	overflow: hidden;
+	background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
+	border-radius: 10px;
+	box-shadow: 5px 20px 50px #000;
+}
+#chk{
+	display: none;
+}
+.signup{
+	position: relative;
+	width:100%;
+	height: 100%;
+}
+.label-form{
+	color: #fff;
+	font-size: 2.3em;
+	justify-content: center;
+	display: flex;
+	margin: 60px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+.input-login{
+	width: 60%;
+	height: 30px;
+	background: #e0dede;
+	justify-content: center;
+	display: flex;
+	margin: 20px auto;
+	padding: 10px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+.login-btn{
+	width: 60%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background: #573b8a;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+.login-btn:hover{
+	background: #6d44b8;
+}
+.login{
+	height: 460px;
+	background: #eee;
+	border-radius: 60% / 10%;
+	transform: translateY(-180px);
+	transition: .8s ease-in-out;
+}
+.login label{
+	color: #573b8a;
+	transform: scale(.6);
+}
+
+#chk:checked ~ .login{
+	transform: translateY(-500px);
+}
+#chk:checked ~ .login label{
+	transform: scale(1);	
+}
+#chk:checked ~ .signup label{
+	transform: scale(.6);
+}
+
+
+/* Login Form end */
+/* Primary Styles */
+*, *::before, *::after {
+	box-sizing: border-box;
+ }
+/*  
+ body {
+	font-family: sans-serif;
+	font-size: 1em;
+	color: #333;
+ }
+ 
+ h1 {
+   font-size: 1.4em;
+ }
+ 
+ em {
+	font-style: normal;
+ }
+ 
+ a {
+	text-decoration: none;
+	color: inherit;
+ }  */
+ 
+ /* Layout */
+ .s-layout {
+	display: flex;
+	width: 100%;
+	min-height: 100vh;
+    
+ }
+ 
+ .s-layout__content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+ }
+ 
+ /* Sidebar */
+ .s-sidebar__trigger {
+	z-index: 2000;
+	position: fixed;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 4em;
+	background: #192b3c;
+ }
+ 
+ .s-sidebar__trigger > i {
+	display: inline-block;
+	margin: 1.5em 0 0 1.5em;
+	color: #f07ab0;
+ }
+ 
+ .s-sidebar__nav {
+	position: relative;
+	top:0%;
+	left: -15em;
+	overflow: hidden;
+	transition: all .3s ease-in;
+	width: 15em;
+	height: 100%;
+	background: #243e56;
+	color: rgba(255, 255, 255, 0.7);
+ }
+ 
+ .s-sidebar__nav:hover,
+ .s-sidebar__nav:focus,
+ .s-sidebar__trigger:focus + .s-sidebar__nav,
+ .s-sidebar__trigger:hover + .s-sidebar__nav {
+	left: 0;
+ }
+ 
+ .s-sidebar__nav ul {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	width: 15em;
+ }
+ 
+ .s-sidebar__nav ul li {
+	width: 100%;
+ }
+ 
+ .s-sidebar__nav-link {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	height: 4em;
+ }
+ 
+ .s-sidebar__nav-link em {
+	position: absolute;
+	top: 50%;
+	left: 4em;
+	transform: translateY(-50%);
+ }
+ 
+ .s-sidebar__nav-link:hover {
+	background: #4d6276;
+ }
+ 
+ .s-sidebar__nav-link > i {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	display: inline-block;
+	width: 4em;
+	height: 4em;
+ }
+ 
+ .s-sidebar__nav-link > i::before {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+ }
+ 
+ /* Mobile First */
+ @media (min-width: 42em) {
+	.s-layout__content {
+	   margin-left: 4em;
+	}
+	
+	/* Sidebar */
+	.s-sidebar__trigger {
+	   width: 4em;
+	}
+	
+	.s-sidebar__nav {
+	   width: 4em;
+	   left: 0;
+	}
+	
+	.s-sidebar__nav:hover,
+	.s-sidebar__nav:focus,
+	.s-sidebar__trigger:hover + .s-sidebar__nav,
+	.s-sidebar__trigger:focus + .s-sidebar__nav {
+	   width: 15em;
+	}
+ }
+ 
+ @media (min-width: 68em) {
+	.s-layout__content {
+	   margin-left: 15em;
+	}
+	
+	/* Sidebar */
+	.s-sidebar__trigger {
+	   display: none
+	}
+	
+	.s-sidebar__nav {
+	   width: 15em;
+	}
+	
+	.s-sidebar__nav ul {
+	   top: 1.3em;
+	}
+ }

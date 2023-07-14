@@ -19,13 +19,15 @@ const CategoriesPage = () => {
 {
   data.map((item)=>{
     return(
-<div className="col-sm-6 col-md-6 col-xxl-3 col-xl-4 col-lg-4 p-3">
+<div className="col-sm-6 col-md-6 col-xxl-3 col-xl-3 col-lg-4 p-3">
 <div class="card " >
   <img src={item.image} class="card-img-top" alt="img"/>
   <div class="card-body">
-    <h5 class="card-title">card title</h5>
-    <p class="card-text">{item.pera}</p>
+    <p class="card-title">card title</p>
+    <div className='d-flex justify-content-around mb-5'>
+      <h3>300 Rs</h3>
     <a href="" class="btn btn-primary">{item.price}</a>
+    </div>
   </div>
 </div>
 </div>)

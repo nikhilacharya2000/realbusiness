@@ -8,6 +8,7 @@ import HomePage from './utils/HomePage';
 import {
   BrowserRouter, Routes, Route,
 } from 'react-router-dom';
+import Login from './utils/Login';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
                <Route path='/celebrities' element={<CelebritiesPage/>}></Route>
                <Route path='/categories' element={<CategoriesPage/>}></Route>
                <Route path='/detail' element={<DetailPage/>}></Route>
+               <Route path='/login' element={<Login/>}></Route>
+
        
 
 

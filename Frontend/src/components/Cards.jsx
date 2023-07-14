@@ -26,7 +26,6 @@ const Cards = () => {
   <img src={item.image} class="card-img-top" alt="img"/>
   <div class="card-body">
     <h5 class="card-title">card title</h5>
-    <p class="card-text">{item.pera}</p>
     <a href="/detail" class="btn btn-primary">{item.price}</a>
   </div>
 </div>
