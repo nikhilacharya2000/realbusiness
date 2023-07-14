@@ -27,7 +27,10 @@ Route::post('/login', 'Api\Auth\AuthController@login');
 Route::post('/register', 'Api\Auth\AuthController@register');
 Route::get('/all-user', 'Api\Frontend\PublicApiController@users');
 
+// Working Api Made by Rahul Soni 
 Route::get('/categories', 'Api\Frontend\PublicApiController@getCategory');
+Route::get('/celebrity', 'Api\Frontend\PublicApiController@getCelebrity');
+
 
 
 
