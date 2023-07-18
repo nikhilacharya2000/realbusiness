@@ -9,6 +9,7 @@ use App\Models\Celebrity;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Api\ResponseController;
 use DB;
+use URL;
 
 class PublicApiController extends ResponseController
 {
@@ -34,6 +35,10 @@ class PublicApiController extends ResponseController
     public function getCelebrity(Request $request){
         $celebrity = Celebrity::get();
         if($celebrity){
+                foreach($celebrity as $key=>$value){
+                    $celebrity[$key]['image'] = URL::to('/uploads/'.$value->image);
+                }
+
              return $this->sendResponse($celebrity, 'success');
         }else{
              return $this->sendError('No records have found');
