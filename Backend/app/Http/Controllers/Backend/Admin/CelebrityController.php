@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Celebrity;
+use App\Models\Category;
 
 class CelebrityController extends Controller
 {
@@ -16,6 +17,7 @@ class CelebrityController extends Controller
     public function index()
     {
         $celebrity = Celebrity::orderby('created_at', 'desc')->get();
+
         return view('backend.admin.celebrity.index', compact('celebrity'));
     }
 
@@ -26,8 +28,10 @@ class CelebrityController extends Controller
      */
     public function create()
     {
+        $category = Category::orderby('created_at', 'desc')->get();
+
         $celebrity = Celebrity::orderby('created_at', 'desc')->get();
-        return view('backend.admin.celebrity.create', compact('celebrity'));
+        return view('backend.admin.celebrity.create', compact('celebrity', 'category'));
     }
 
     /**
@@ -41,11 +45,13 @@ class CelebrityController extends Controller
         $request->validate([
             'name' => 'required',
             'image' => 'required',
+            'category' => 'required',
         ]);
         try {
             $celebrity = new Celebrity();
 
             $celebrity->name = $request->input('name');
+            $celebrity->category = $request->input('category');
 
             $file = $request->file('image');
             $destinationPath = 'uploads';
@@ -83,7 +89,8 @@ class CelebrityController extends Controller
     public function edit($id)
     {
         $celebrity = Celebrity::where('id', $id)->first();
-        return view('backend.admin.celebrity.edit', compact('celebrity'));
+        $category = Category::orderby('created_at', 'desc')->get();
+        return view('backend.admin.celebrity.edit', compact('celebrity', 'category'));
     }
 
     /**
@@ -97,15 +104,20 @@ class CelebrityController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'image' => 'required',
         ]);
+
         try {
             $celebrity = Celebrity::find($id);
             $celebrity->name = $request->name;
-            $file = $request->file('image');
-            $destinationPath = 'uploads';
-            $file->move($destinationPath, $file->getClientOriginalName());
-            $celebrity->image = $file->getClientOriginalName();
+            $celebrity->category = $request->category;
+
+            if ($request->hasFile('image')) {
+                $file = $request->file('image');
+                $destinationPath = 'uploads';
+                $file->move($destinationPath, $file->getClientOriginalName());
+                $celebrity->image = $file->getClientOriginalName();
+            }
+
             $celebrity->save();
             return redirect()->route('admin.celebrity.index');
         } catch (\Exception $e) {
