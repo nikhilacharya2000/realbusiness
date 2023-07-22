@@ -98,14 +98,13 @@ class CategoryController extends Controller
 
         $request->validate([
            'title' => 'required',
-           'category' => 'required',
+           
            
         ]);
         try{
             $category = Category::find($id);
             $category->title= $request->title;
-            $category->category= $request->category;
-
+           
             
           $category->save();
           return redirect()->route('admin.category.index');

@@ -39,6 +39,7 @@ class PublicApiController extends ResponseController
         if($celebrity){
                 foreach($celebrity as $key=>$value){
                     $celebrity[$key]['image'] = URL::to('/uploads/'.$value->image);
+                    $celebrity[$key]['category'] = $value->categoryOne->title;
                 }
 
              return $this->sendResponse($celebrity, 'success');
