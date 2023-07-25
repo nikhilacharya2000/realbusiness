@@ -29,6 +29,8 @@
                                 <tr>
                                 <th>#</th>
                                     <th>Celebrity Name</th>
+                                    <th>Category</th>
+                                    <th>Actions</th>
 
                                 </tr>
                             </thead>
@@ -38,7 +40,7 @@
                                     <tr>
                                     <td>{{$loop->iteration}}</td>
                                         <td>{{ $value->name }}</td>
-
+                                        <td>{{ $value->categoryOne->title }}</td>
                                         <td>
                                             <div class="d-flex">
                                                 <a class="btn btn-primary mr-2"

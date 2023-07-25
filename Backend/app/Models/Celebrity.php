@@ -9,4 +9,8 @@ class Celebrity extends Model
 {
     protected $table = 'celebrity';
     use HasFactory;
+    public function categoryOne()
+    {
+         return $this->hasOne('App\Models\Category',  'id', 'category');
+    }
 }
