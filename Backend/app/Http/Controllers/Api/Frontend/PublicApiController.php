@@ -44,4 +44,16 @@ class PublicApiController extends ResponseController
              return $this->sendError('No records have found');
         }
     }
+
+
+
+    public function getCelebrityDetail($id){
+        $celebrity = Celebrity::where('id',$id)->first();
+        $celebrity->image = URL::to('/uploads/'.$celebrity->image);
+        if($celebrity){
+             return $this->sendResponse($celebrity, 'success');
+        }else{
+             return $this->sendError('No records have found');
+        }
+    }
 }

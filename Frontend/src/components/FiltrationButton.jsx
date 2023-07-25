@@ -1,28 +1,38 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import { API_ENDPOINT } from "../constant";
 
 const FiltrationButton = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    fetch(`${API_ENDPOINT}categories`) // Replace with your API endpoint
+      .then((response) => response.json())
+      .then((data) => {
+        setCategories(data.data);
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching categories:", error);
+      });
+  }, []);
+
   return (
     <div>
-
-<nav class="nav-horizontal center">
-  <div class="mask">
-    <ul class="list">
-      <li><a className='filtar-btn active' href="#">Celebrity</a></li>
-      <li><a className='filtar-btn' href="#">Influencer</a></li>
-      <li><a className='filtar-btn' href="#">Singer</a></li>
-      <li><a className='filtar-btn' href="#">Sports</a></li>
-      <li><a className='filtar-btn' href="#">Tv </a></li>
-      <li><a className='filtar-btn' href="#">Athletes</a></li>
-      <li><a className='filtar-btn' href="#">Chef</a></li>
-      <li><a className='filtar-btn' href="#">Author</a></li>
-      <li><a className='filtar-btn' href="#">Comedian</a></li>
-  
-    </ul>
-  </div>
-</nav>
-      
+      <nav className="nav-horizontal center">
+        <div className="mask">
+          <ul className="list">
+            {categories.map((category) => (
+              <li key={category.id}>
+                <button className="filter-btn" href="#">
+                  {category.title}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
     </div>
-  )
-}
+  );
+};
 
-export default FiltrationButton
+export default FiltrationButton;

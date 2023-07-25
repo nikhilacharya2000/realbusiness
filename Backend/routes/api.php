@@ -32,6 +32,14 @@ Route::get('/categories', 'Api\Frontend\PublicApiController@getCategory');
 Route::get('/celebrity', 'Api\Frontend\PublicApiController@getCelebrity');
 
 
+Route::get('/celebrity-detail/{id}', 'Api\Frontend\PublicApiController@getCelebrityDetail');
+
+
+
+
+
+
+
 
 
 

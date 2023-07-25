@@ -45,7 +45,7 @@ const Navbar = () => {
           </div>
           <ul className="navbar-nav ms-auto ">
             <li className="nav-item">
-              <NavLink className="nav-link mx-2 text-uppercase active" aria-current="page" to="/">HOME</NavLink>
+              <NavLink className="nav-link mx-2 text-uppercase active" aria-current="page" to="/deta">HOME</NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link mx-2 text-uppercase" to="/celebrities">CELEBRITIES</NavLink>
@@ -57,10 +57,10 @@ const Navbar = () => {
           </ul>
           <ul className="navbar-nav ms-auto ">
             <li className="nav-item">
-              <NavLink className="nav-link mx-2 text-uppercase" to="/login"><i className="fa-solid fa-cart-shopping me-1"></i> LOGIN</NavLink>
+              <NavLink className="nav-link mx-2 text-uppercase" to="/loginsignup"><button className='navbar-login-btn '>Login !</button></NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link mx-2 text-uppercase" to="#"><i className="fa-solid fa-circle-user me-1"></i> SIGNUP</NavLink>
+              {/* <NavLink className="nav-link mx-2 text-uppercase" to="#"><i className="fa-solid fa-circle-user me-1"></i> SIGNUP</NavLink> */}
             </li>
           </ul>
         </div>
