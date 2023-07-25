@@ -53,6 +53,8 @@ class PublicApiController extends ResponseController
     public function getCelebrityDetail($id){
         $celebrity = Celebrity::where('id',$id)->first();
         $celebrity->image = URL::to('/uploads/'.$celebrity->image);
+        $celebrity->category = $celebrity->categoryOne->title;
+
         if($celebrity){
              return $this->sendResponse($celebrity, 'success');
         }else{
