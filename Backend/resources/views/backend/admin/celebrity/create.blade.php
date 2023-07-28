@@ -41,6 +41,22 @@
             </div>
 
 
+
+            <div class="form-group col-md-12 col-sm-12">
+                <label for=""> Celebrity Description </label>
+                <input type="text" class="form-control" id="description" name="description" value=""
+                    placeholder=""></input>
+
+                @error('description')
+                    <span id="error_description" class="has-error">{{ $message }}</span>
+                @enderror
+
+            </div>
+
+
+
+
+
             <div class="form-group col-md-12 col-sm-12">
                 <label for=""> Category</label>
                 <select name="category" id="category" class="form-control" required>
