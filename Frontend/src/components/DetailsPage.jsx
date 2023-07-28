@@ -1,82 +1,45 @@
-// import React from 'react';
-// import { BiCameraMovie } from "react-icons/bi";
-// import {FaPeopleGroup} from "react-icons/fa6";
-// import {BsCameraVideoOff} from "react-icons/bs";
-// const DetailsPage = () => {
-//   return (
-//     <div className="container">
-//       <div className="row justify-content-center">
-//         <div className="col-md-7 col-lg-4 mb-5 mb-lg-0 wow fadeIn">
-//           <div className="card border-0 shadow">
-//             <img src={require("../assests/images/CardsImage/alia.jpg")} alt="..." />
-//             <div className="card-body p-1-9 p-xl-5">
-//               <div className="mb-4">
-//                 <h3 className="h4 mb-0">Alia Bhatt</h3>
-//                 <span className="text-primary">Actress</span>
-//               </div>
-
-//             </div>
-//           </div>
-//         </div>
-//         <div className="col-lg-8">
-//           <div className="ps-lg-1-6 ps-xl-5">
-//             <div className="mb-5 wow fadeIn">
-//               <div className="text-start mb-1-6 wow fadeIn">
-//                 <h2 className="h1 mb-0 text-primary">About Alia</h2>
-//               </div>
-//               <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.</p>
-//               <p className="mb-0">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-//             </div>
-//             <div className="mb-5 wow fadeIn">
-//               <div className="text-start mb-1-6 wow fadeIn">
-//                 <h2 className="mb-0 text-primary">Request for</h2>
-//               </div>
-//               <div className="row mt-n4">
-//                 <div className="col-sm-6 col-xl-4 mt-4">
-//                   <div className="card text-center border-0 rounded-3">
-//                     <div className="card-body">
-//                       <i className="ti-bookmark-alt icon-box medium rounded-3 mb-4"><BiCameraMovie/></i>
-//                       <h3 className="h5 mb-3">Personlised Vedio msg</h3>
-
-//                     </div>
-//                   </div>
-//                 </div>
-//                 <div className="col-sm-6 col-xl-4 mt-4">
-//                   <div className="card text-center border-0 rounded-3">
-//                     <div className="card-body">
-//                       <i className="ti-pencil-alt icon-box medium rounded-3 mb-4"> <FaPeopleGroup/></i>
-//                       <h3 className="h5 mb-3">Meet And Greet</h3>
-
-//                     </div>
-//                   </div>
-//                 </div>
-//                 <div className="col-sm-6 col-xl-4 mt-4">
-//                   <div className="card text-center border-0 rounded-3">
-//                     <div className="card-body">
-//                       <i className="ti-medall-alt icon-box medium rounded-3 mb-4"><BsCameraVideoOff/></i>
-//                       <h3 className="h5 mb-3">Video Call</h3>
-
-//                     </div>
-//                   </div>
-//                 </div>
-//               </div>
-//             </div>
-
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-
-//   );
-// };
-
-// export default DetailsPage;
-
 import React, { useEffect, useState } from "react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
+
+import { BiCameraMovie } from "react-icons/bi";
+import {FaPeopleGroup} from "react-icons/fa6";
+import {BsCameraVideoOff} from "react-icons/bs";
+import {BsFillPatchCheckFill} from "react-icons/bs";
 import { API_ENDPOINT } from "../constant";
 import { useNavigate, useParams } from "react-router-dom";
 const DetailsPage = () => {
+  
+
+// carousel
+const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 6
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1472 },
+    items: 6
+  },
+  tablet: {
+    breakpoint: { max: 1472, min: 1088 },
+    items: 3
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1
+  }
+};
+
+// carousel
+
+
+
+  
+
+
   const [celebrityDetails, setCelebrityDetails] = useState(null);
   const { id } = useParams();
 
@@ -103,40 +66,238 @@ const DetailsPage = () => {
     // Add loading or error handling UI here while waiting for the API response
     return <div>Loading...</div>;
   }
-
   return (
-    <div className="container">
-      <div className="row justify-content-center">
-        {/* Render celebrity details content here */}
-        <div className="col-md-7 col-lg-4 mb-5 mb-lg-0 wow fadeIn">
-          <div className="card border-0 shadow">
-            <img src={celebrityDetails.image} alt="..." />
-            <div className="card-body p-1-9 p-xl-5">
-              <div className="mb-4">
-                <h3 className="h4 mb-0">{celebrityDetails.name}</h3>
-                <span className="text-primary">
-                  {celebrityDetails.category}
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-lg-8">
-          <div className="ps-lg-1-6 ps-xl-5">
-            <div className="mb-5 wow fadeIn">
-              {/* Render additional details about the celebrity here */}
-              <div className="text-start mb-1-6 wow fadeIn">
-                <h2 className="h1 mb-0 text-primary">
-                  About {celebrityDetails.name}
-                </h2>
-              </div>
-              <p>{/* Add celebrity details here */}</p>
-            </div>
-          </div>
-        </div>
-      </div>
+
+<div>
+
+{/* slider */}
+
+
+<Carousel className="detailpage-slider" responsive={responsive}>
+        
+<div> 
+<div class="card-detail-page">
+<img className="detailpage-img" src={celebrityDetails.image} alt="..." />
+  </div>
+</div>
+
+
+  <div>
+  <div class="card-detail-page">
+<img className="detailpage-img" src={celebrityDetails.image} alt="..." />
+  </div>
+</div>
+
+
+
+  <div>
+  <div class="card-detail-page">
+<img className="detailpage-img" src={celebrityDetails.image} alt="..." />
+  </div>
+</div>
+
+
+
+
+  <div>
+  <div class="card-detail-page">
+<img className="detailpage-img" src={celebrityDetails.image} alt="..." />
+  </div>
+
+
+</div>
+ <div>
+ <div class="card-detail-page">
+<img className="detailpage-img" src={celebrityDetails.image} alt="..." />
+  </div>
+
+
+</div>
+
+  <div>
+  <div class="card-detail-page">
+<img className="detailpage-img" src={celebrityDetails.image} alt="..." />
+  </div>
+
+</div>
+
+
+
+  <div>
+  <div class="card-detail-page">
+<img className="detailpage-img" src={celebrityDetails.image} alt="..." />
+  </div>
+
+
+</div>
+
+
+  <div>
+  
+  <div class="title-box">
+    <h3 className='featured-h3'>
+    SPRING FEVER
+    </h3>
+    <hr/>
+    <div class="intro">
+      Yllamco laboris nisi ut aliquip ex ea commodo.
     </div>
+  </div>  
+  <div class="info">
+    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</span>
+</div>
+<div class="footer-featured">
+  <div class="icon-holder">
+    <span>
+  <i class="fa fa-comment-o"></i>
+  
+    <space></space>
+    <i class="fa fa-calendar"></i>
+    <span><button className='navbar-login-btn'>Book Now</button></span>
+    </span>
+  </div>
+</div>
+
+<div class="color-overlay"></div>
+</div>
+
+</Carousel>;
+{/* slider */}
+
+{/* name section */}
+
+<div className="container-fluid">
+
+<p className="detailpage-celebrity-name">{celebrityDetails.name} <BsFillPatchCheckFill/></p>
+<p className="detailpage-celebrity-category">{celebrityDetails.category}</p>
+<button className="book-celebrity-btn">Book Now</button>
+
+<hr></hr>
+</div>
+{/* name section */}
+
+{/* Available offers*/}
+<p className="detaipage-sub-head">Available offers</p>
+<div className="detail-offer-main">
+<div className="container available-offer-home ">
+  <div>
+    <div className="available-offer-1"><img className="percentage-img" src={require("../assests/images/detailpage/percentage.png")}></img>
+     <p className="buy-for">Buy For <span className="ofer">Flate 15% Off</span> </p> 
+     <div/>
+     
+  </div>
+  <p className="available-offer-pera">Extra $ 800off on
+this booking</p>
+</div>
+</div>
+
+<div className="container available-offer-home ">
+  <div>
+    <div className="available-offer-1"><img className="percentage-img" src={require("../assests/images/detailpage/percentage.png")}></img>
+     <p className="buy-for">Buy For <span className="ofer">Flate 15% Off</span> </p> 
+     <div/>
+     
+  </div>
+  <p className="available-offer-pera">Extra $ 800off on
+this booking</p>
+</div>
+</div>
+</div>
+{/* Available offers*/}
+
+
+<hr></hr>
+{/* review */}
+<p className="detaipage-sub-head">Review</p>
+
+<div className="review">
+
+<main class="l-card">
+	<section class="l-card__text">
+		<p>
+			This is a comment card appearing above a dotted background, and that's really cool!
+		</p>
+	</section>
+	<section class="l-card__user">
+		<div class="l-card__userImage">
+			<img className="img-review" src="https://avatars.githubusercontent.com/u/20525486?v=4" alt="Naruto"/>
+		</div>
+		<div class="l-card__userInfo">
+			<span>Naruto Uzumaki</span>
+			<span>Seventh Hokage</span>
+		</div>
+	</section>
+</main>
+
+
+<main class="l-card">
+	<section class="l-card__text">
+		<p>
+			This is a comment card appearing above a dotted background, and that's really cool!
+		</p>
+	</section>
+	<section class="l-card__user">
+		<div class="l-card__userImage">
+			<img className="img-review" src="https://avatars.githubusercontent.com/u/20525486?v=4" alt="Naruto"/>
+		</div>
+		<div class="l-card__userInfo">
+			<span>Naruto Uzumaki</span>
+			<span>Seventh Hokage</span>
+		</div>
+	</section>
+</main>
+
+
+<main class="l-card">
+	<section class="l-card__text">
+		<p>
+			This is a comment card appearing above a dotted background, and that's really cool!
+		</p>
+	</section>
+	<section class="l-card__user">
+		<div class="l-card__userImage">
+			<img className="img-review" src="https://avatars.githubusercontent.com/u/20525486?v=4" alt="Naruto"/>
+		</div>
+		<div class="l-card__userInfo">
+			<span>Naruto Uzumaki</span>
+			<span>Seventh Hokage</span>
+		</div>
+	</section>
+</main>
+
+
+<main class="l-card">
+	<section class="l-card__text">
+		<p>
+			This is a comment card appearing above a dotted background, and that's really cool!
+		</p>
+	</section>
+	<section class="l-card__user">
+		<div class="l-card__userImage">
+			<img className="img-review" src="https://avatars.githubusercontent.com/u/20525486?v=4" alt="Naruto"/>
+		</div>
+		<div class="l-card__userInfo">
+			<span>Naruto Uzumaki</span>
+			<span>Seventh Hokage</span>
+		</div>
+	</section>
+</main>
+</div>
+{/* review */}
+
+
+{/* about section */}
+<p className="detaipage-sub-head">About {celebrityDetails.name}</p>
+
+<div>
+{celebrityDetails.description}
+</div>
+{/* about section */}
+
+      </div>
+
   );
 };
 
 export default DetailsPage;
+

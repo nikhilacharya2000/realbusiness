@@ -13,6 +13,9 @@ a {
     outline:none !important;
     box-shadow: none !important;
   }
+ .search-btn-nav{
+	background-color: #212529;
+ }
   @media screen and (max-width:540px){
     .centerOnMobile {
       text-align:center
@@ -43,7 +46,7 @@ a {
 	padding: 12px 24px;
 	border: 0;
 	color: #fff;
-	background: #000a47;
+	background:#212529 ;
 	line-height: 1.15;
 	font-size: 16px;
 	:hover {
@@ -701,11 +704,23 @@ margin: auto;
 .main-login{
 	width: 500px;
 	height: 600px;
-	background: rgb(239, 54, 54);
+	background-color: #ffe6e6;
+	background: red;
 	overflow: hidden;
-	background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
+	background-image: url("../assests//images/300ppi/Asset\ 3@300x.png");
+	background: url("") no-repeat center/ cover;
 	border-radius: 10px;
 	box-shadow: 5px 20px 50px #000;
+
+/* From https://css.glass */
+background: rgba(249, 249, 249, 0.07);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(4.6px);
+-webkit-backdrop-filter: blur(4.6px);
+border: 1px solid rgba(249, 249, 249, 0.71);
+
+
 }
 #chk{
 	display: none;
@@ -744,7 +759,7 @@ margin: auto;
 	justify-content: center;
 	display: block;
 	color: #fff;
-	background: #573b8a;
+	background: #1ad079;
 	font-size: 1em;
 	font-weight: bold;
 	margin-top: 20px;
@@ -765,7 +780,7 @@ margin: auto;
 	transition: .8s ease-in-out;
 }
 .login label{
-	color: #573b8a;
+	color: #07133b;
 	transform: scale(.6);
 }
 
@@ -1376,85 +1391,188 @@ top-15 {
 
 
 /* detail page again */
-body{margin-top:20px;}
-.icon-box.medium {
-    font-size: 20px;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
+
+
+
+/* detaln page slider card */
+ .card-detail-page {
+	width: 250px;
+	height: 300px;
+	border-radius: 22px;
+	overflow: hidden;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .detailpage-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+  }
+  .detailpage-slider{
+	margin-top: 100px;
+	margin-right: 50px;
+	margin-left: 50px;
+  } 
+  .detaipage-sub-head{
+	font-size: 30px;
+	color: #272727;
+	margin-left: 50px;
+  }
+  /* detaln page slider card */
+.detailpage-celebrity-name{
+	  font-size: 45px;
+     font-weight: 600;
+	 margin-left: 50px;
 }
-.icon-box {
-    font-size: 30px;
-    margin-bottom: 33px;
-    display: inline-block;
-    color: #ffffff;
-    height: 65px;
-    width: 65px;
-    line-height: 65px;
-    background-color: #59b73f;
-    text-align: center;
-    border-radius: 0.3rem;
-}
-.social-icon-style2 li a {
-    display: inline-block;
-    font-size: 14px;
-    text-align: center;
-    color: #ffffff;
-    background: #59b73f;
-    height: 41px;
-    line-height: 41px;
-    width: 41px;
-}
-.rounded-3 {
-    border-radius: 0.3rem !important;
+.detailpage-celebrity-category{
+	margin-left: 50px;
+	font-size: 20px;
+	color: #999;
 }
 
-.social-icon-style2 {
-    margin-bottom: 0;
-    display: inline-block;
-    padding-left: 10px;
-    list-style: none;
+.book-celebrity-btn{
+	width: 200px;
+	height: 50px;
+	border-radius: 30px;
+	margin-left: 50px;
+	margin-bottom: 30px;
+	color: white;
+	background-color: #272727;
 }
 
-.social-icon-style2 li {
-    vertical-align: middle;
-    display: inline-block;
-    margin-right: 5px;
+.detail-offer-main{
+	display: flex;
+	width: 700px;
+	margin-left: 50px;
+}
+.available-offer-1{
+	display: flex;
+}
+.available-offer-home {
+	background-color: #f8fafb;
+	width: 332px;
+	border-style: dashed;
+	border-color:#a9abbc ;
+	border-radius: 10px;
+	align-items:start;
+	/* position: absolute;
+	left: 0; */
+}
+.available-offer-pera{
+	font-size: 16px;
+	font-weight: 600;
+	color: #a9abbc;
+}
+.buy-for{
+	font-size: 16px;
+	font-weight: 600;
+	padding-left: 23px;
+    padding-top: 13px;
+}
+.percentage-img{
+	width:max-content;
+    height: fit-content;
+    margin-top: 13px;
+    margin-right: -19px;
+
+}
+.ofer{
+	background-color: #176f2f;
+	font-size: 14px;
+	color: white;
+	font-weight: 600;
+	border-radius: 5px;
+	padding: 2px;
 }
 
-a, a:active, a:focus {
-    color: #616161;
-    text-decoration: none;
-    transition-timing-function: ease-in-out;
-    -ms-transition-timing-function: ease-in-out;
-    -moz-transition-timing-function: ease-in-out;
-    -webkit-transition-timing-function: ease-in-out;
-    -o-transition-timing-function: ease-in-out;
-    transition-duration: .2s;
-    -ms-transition-duration: .2s;
-    -moz-transition-duration: .2s;
-    -webkit-transition-duration: .2s;
-    -o-transition-duration: .2s;
+
+
+.review{
+	display: flex;
+	margin-top: 30px;
+	margin-left: 20px;
+	margin-left: 20px;
+}
+.img-review {
+	width: 100%;
+	height: auto;
 }
 
-.text-secondary, .text-secondary-hover:hover {
-    color: #59b73f !important;
-}
-.display-25 {
-    font-size: 1.4rem;
-}
-
-.text-primary, .text-primary-hover:hover {
-    color: #ff712a !important;
-}
-
-p {
-    margin: 0 0 20px;
+.l-card {
+	width: auto;
+	min-width: 360px;
+	max-width: 480px;
+	height: auto;
+	background: #f5f5f5;
+	color: #272727;
+	padding: 10px;
+	margin: 10px;
+	
+	box-shadow: 0px 7px 24px rgba(100, 100, 100, 0.4);
 }
 
-.mb-1-6, .my-1-6 {
-    margin-bottom: 1.6rem;
+.l-card__text p {
+	font-size: 30px;
+	font-family: "Vollkorn", serif;
+	font-weight: 400;
+	color: #3f3f55;
+	text-align: left;
+}
+
+.l-card__text p::after {
+	content: "\201D";
+	display: inline;
+	color: #999;
+}
+
+.l-card__text p::before {
+	content: "\201C";
+	display: inline;
+	color: #999;
+}
+
+.l-card__user {
+	display: flex;
+	flex-direction: row;
+	padding-top: 24px;
+	margin-top: 12px;
+	/* border-top: 1px solid #c1c1c1; */
+	align-items: center;
+}
+.l-card__userImage {
+	width: 42px;
+	height: 42px;
+	overflow: hidden;
+	border-radius: 50%;
+}
+
+.l-card__userImage img {
+	width: 100%;
+	height: 100%;
+	object-filt: cover;
+}
+
+.l-card__userInfo {
+	display: flex;
+	flex-direction: column;
+	margin-left: 16px;
+}
+
+.l-card__userInfo span:nth-child(1) {
+	font-weight: bold;
+	font-family: sans-serif;
+	font-size: 14px;
+	color: #3f3f55;
+}
+.l-card__userInfo span:nth-child(2) {
+	color: #adada6;
+	font-family: sans-serif;
+	font-size: 12px;
+	margin-top: 2px;
+}
+.detailpage-about-pera{
+	margin-left: 50px;
+	font-size: 20px;
 }
 /* detail page again */
-
-  
