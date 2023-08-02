@@ -24,12 +24,26 @@
             </div>
 
 
+            <div class="form-group col-md-12 col-sm-12">
+
+                <label for=""> Offer</label>
+                <input type="text" class="form-control" id="offer" name="offer" value="{{ $celebrity->offer }}"
+                    placeholder=""></input>
+                </br>
+
+                @error('title')
+                    <span id="error_description" class="has-error">{{ $message }}</span>
+                @enderror
+
+
+            </div>
+
 
             <div class="form-group col-md-12 col-sm-12">
 
                 <label for=""> Celebrity Description</label>
-                <input type="text" class="form-control" id="description" name="description" value="{{ $celebrity->description }}"
-                    placeholder=""></input>
+                <input type="text" class="form-control" id="description" name="description"
+                    value="{{ $celebrity->description }}" placeholder=""></input>
                 </br>
 
                 @error('description')
@@ -40,17 +54,18 @@
             </div>
 
 
-            
+
             <div class="form-group col-md-12 col-sm-12">
-    <label for="category">Category</label>
-    <select name="category" id="category" class="form-control">
-        <option value=""></option>
-        @foreach ($category as $categories)
-            <option value="{{ $categories->id }}" @if ($categories->id == $celebrity->categoryOne->id) selected @endif>{{ $categories->title }}</option>
-        @endforeach
-    </select>
-    <br>
-</div>
+                <label for="category">Category</label>
+                <select name="category" id="category" class="form-control">
+                    <option value=""></option>
+                    @foreach ($category as $categories)
+                        <option value="{{ $categories->id }}" @if ($categories->id == $celebrity->categoryOne->id) selected @endif>
+                            {{ $categories->title }}</option>
+                    @endforeach
+                </select>
+                <br>
+            </div>
 
 
 
@@ -72,13 +87,13 @@
 
 
                 </div>
-               
+
                 <script type="text/javascript">
                     $('input[id=photo]').change(function() {
                         $('#SelectedFileName').val($(this).val());
                     });
                 </script>
-                
+
             </div>
 
 
@@ -93,8 +108,4 @@
         </div>
     </form>
 
-<<<<<<< HEAD
 @stop
-=======
-@stop
->>>>>>> backend/main

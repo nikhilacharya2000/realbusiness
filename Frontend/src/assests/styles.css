@@ -14,7 +14,7 @@ a {
     box-shadow: none !important;
   }
  .search-btn-nav{
-	background-color: #212529;
+	background-color:#ffc107;
  }
   @media screen and (max-width:540px){
     .centerOnMobile {
@@ -500,35 +500,6 @@ margin: auto;
 
 /* filtration button-end */
 
-
-/* cards data */
-/* .card-img-top{
-	border-radius: 30px;
-	padding: 7px;
-}
-.card-title{
-	font-size: 30px;
-	text-align: left;
-	font-weight: 600; 
-	color: rgb(64, 64, 227);
-}
-.card{
-	border-radius: 30px;
-	box-shadow: rgba(218, 218, 234, 0.05) 0px 1px 0px, rgba(234, 234, 244, 0.1) 0px 0px 8px;
-
-}
-.card-body{
-	padding: 20px;
-	margin-top: -15px;
-}
-.btn-primary{
-       border-radius: 50px;
-	   width: 120px;
-}
-.btn-primary:hover{
-	background-color: black;
-} */
-/* cards data */
 
 
 
@@ -1576,3 +1547,9 @@ top-15 {
 	font-size: 20px;
 }
 /* detail page again */
+
+
+
+/* Add your other styles here */
+
+/* Sidebar Styling */

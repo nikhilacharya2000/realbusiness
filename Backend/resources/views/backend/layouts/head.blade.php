@@ -30,3 +30,5 @@
     var CSRF_TOKEN = "{{ csrf_token() }}";
 </script>
 
+<script src="https://cdn.ckeditor.com/ckeditor5/38.1.1/classic/ckeditor.js"></script>
+

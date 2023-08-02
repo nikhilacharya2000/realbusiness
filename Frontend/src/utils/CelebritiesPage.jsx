@@ -9,7 +9,7 @@ const CelebritiesPage = () => {
   return (
     
     <div>        
-      
+     
          <img className='celebrities-img ' src={require("../assests/images/celebrities/sara-ali.jpg")}></img>
                 <div className='celebrities-hero'>  
                    
@@ -34,5 +34,5 @@ const CelebritiesPage = () => {
     </div>
   )
 }
-
+ 
 export default CelebritiesPage

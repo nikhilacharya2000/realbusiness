@@ -9,6 +9,14 @@ import {BsCameraVideoOff} from "react-icons/bs";
 import {BsFillPatchCheckFill} from "react-icons/bs";
 import { API_ENDPOINT } from "../constant";
 import { useNavigate, useParams } from "react-router-dom";
+
+
+const removeHtmlTags = (htmlString) => {
+  const doc = new DOMParser().parseFromString(htmlString, "text/html");
+  return doc.body.textContent || "";
+};
+
+
 const DetailsPage = () => {
   
 
@@ -66,6 +74,8 @@ const responsive = {
     // Add loading or error handling UI here while waiting for the API response
     return <div>Loading...</div>;
   }
+  const descriptionWithoutTags = removeHtmlTags(celebrityDetails.description);
+
   return (
 
 <div>
@@ -182,7 +192,7 @@ const responsive = {
 <div className="container available-offer-home ">
   <div>
     <div className="available-offer-1"><img className="percentage-img" src={require("../assests/images/detailpage/percentage.png")}></img>
-     <p className="buy-for">Buy For <span className="ofer">Flate 15% Off</span> </p> 
+     <p className="buy-for">Buy For <span className="ofer">Flate {celebrityDetails.offer} Off</span> </p> 
      <div/>
      
   </div>
@@ -194,7 +204,7 @@ this booking</p>
 <div className="container available-offer-home ">
   <div>
     <div className="available-offer-1"><img className="percentage-img" src={require("../assests/images/detailpage/percentage.png")}></img>
-     <p className="buy-for">Buy For <span className="ofer">Flate 15% Off</span> </p> 
+     <p className="buy-for">Buy For <span className="ofer">Flate {celebrityDetails.offer} Off</span> </p> 
      <div/>
      
   </div>
@@ -288,10 +298,10 @@ this booking</p>
 
 {/* about section */}
 <p className="detaipage-sub-head">About {celebrityDetails.name}</p>
-
-<div>
-{celebrityDetails.description}
-</div>
+<div>{descriptionWithoutTags}</div>
+{/* <div>
+{ celebrityDetails.description}
+</div> */}
 {/* about section */}
 
       </div>

@@ -32,7 +32,9 @@
             <div class="form-group col-md-12 col-sm-12">
                 <label for=""> Celebrity Name </label>
                 <input type="text" class="form-control" id="name" name="name" value=""
-                    placeholder=""></input>
+                    placeholder="">
+                
+                </input>
 
                 @error('name')
                     <span id="error_description" class="has-error">{{ $message }}</span>
@@ -43,15 +45,31 @@
 
 
             <div class="form-group col-md-12 col-sm-12">
-                <label for=""> Celebrity Description </label>
-                <input type="text" class="form-control" id="description" name="description" value=""
-                    placeholder=""></input>
+                <label for=""> Offer </label>
+                <input type="text" class="form-control" id="offer" name="offer" value=""
+                    placeholder="">
+                </input>
 
-                @error('description')
+                @error('offer')
                     <span id="error_description" class="has-error">{{ $message }}</span>
                 @enderror
 
             </div>
+
+
+
+            <div class="form-group col-md-12 col-sm-12">
+                <label for="description">Celebrity description</label>
+                <input type="text" class="form-control" id="description" name="description" value=""
+                    placeholder=""/>
+                
+
+            
+                @error('description')
+                    <span id="error_description" class="has-error">{{ $message }}</span>
+                @enderror
+            </div>
+            
 
 
 

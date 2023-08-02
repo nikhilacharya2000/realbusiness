@@ -45,6 +45,7 @@ class CelebrityController extends Controller
         $request->validate([
             'name' => 'required',
             'description' => 'required',
+            'offer' => 'required',
             'image' => 'required',
             'category' => 'required',
         ]);
@@ -53,6 +54,7 @@ class CelebrityController extends Controller
 
             $celebrity->name = $request->input('name');
             $celebrity->description = $request->input('description');
+            $celebrity->offer = $request->input('offer');
 
             $celebrity->category = $request->input('category');
 
@@ -108,12 +110,15 @@ class CelebrityController extends Controller
         $request->validate([
             'name' => 'required',
             'description' => 'required',
+            'offer' => 'required',
         ]);
 
         try {
             $celebrity = Celebrity::find($id);
             $celebrity->name = $request->name;
             $celebrity->description = $request->description;
+            $celebrity->offer = $request->offer;
+
             $celebrity->category = $request->category;
 
             if ($request->hasFile('image')) {
